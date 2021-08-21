@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     display: grid;
-    width: 50%;
+    width: 70%;
     margin: auto;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -35,28 +35,38 @@ export const ContentEdit = styled.div`
         
     }
     textarea{
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 2rem;
         width: 90%;
         min-height: 200px;
         resize: vertical;
+        background-color: #ffffe6;
     }
 `
 export const ContentView = styled.div`
     background-color: #fffba4;
-    text-align: center;
+    text-align: left;
     border-radius: 1rem;
-    h3{
-        background-color: azure;
-        width: 30%;
+    .title{
+        background-color: azure ;
+        width: 30% ;
         margin: auto;
+        text-align: center;
         
     }
-    textarea{
-        font-size: 18px;
+    pre{
+        background-color: whitesmoke;
+    }
+    div{
+        background-color: #ffffe6;
+        margin: auto;
         margin-top: 2rem;
         width: 90%;
         min-height: 200px;
         resize: vertical;
+        padding: 1rem;
+    }
+    img{
+        max-width: 100%;
     }
 `

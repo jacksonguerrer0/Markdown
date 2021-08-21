@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createGlobalStyle } from 'styled-components';
-import { Container, ContainerUp, ContentEdit, ContentView, Header } from './MarkDownStyled'
-
+import { Container, ContentEdit, ContentView, Header } from './MarkDownStyled'
+import marked from 'marked'
+const GlobalStyles = createGlobalStyle`
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #0c7975;
+};
+`
 const MarkDown = () => {
+    const [textEdit, setTextEdit] = useState('')
 
-    const GlobalStyles = createGlobalStyle`
-        body{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            background-color: #0c7975;
-        };
-    `
+    const handleTextEdit = (e) => {
+        setTextEdit(e.target.value)
+    }
+    const renderer = new marked.Renderer();
+    const markdown = marked(textEdit, {sanitize: true})
+    console.log(markdown)
+    console.log(renderer)
     return (
         <>
         <GlobalStyles />
@@ -25,16 +33,14 @@ const MarkDown = () => {
                 <textarea 
                 name="edit"
                 cols="30" 
-                rows="10">
+                rows="10"
+                onChange={handleTextEdit}>
                 </textarea>
             </ContentEdit>
             <ContentView>
-                <h3>Vista</h3>
-                <textarea 
-                name="view"
-                cols="30" 
-                rows="10">
-                </textarea>                
+                <h3 className='title'>Vista</h3>
+                <div dangerouslySetInnerHTML={{__html: marked(markdown, {renderer: renderer}) }}
+                />            
             </ContentView>
         </Container>
         </>
