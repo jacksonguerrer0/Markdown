@@ -11,7 +11,7 @@ body{
 };
 `
 const MarkDown = () => {
-    const [textEdit, setTextEdit] = useState('')
+    const [textEdit, setTextEdit] = useState('# Usa mi markdown, es gratis :)')
 
     const handleTextEdit = (e) => {
         setTextEdit(e.target.value)
@@ -34,7 +34,8 @@ const MarkDown = () => {
                 name="edit"
                 cols="30" 
                 rows="10"
-                onChange={handleTextEdit}>
+                onChange={handleTextEdit}
+                value={textEdit}>
                 </textarea>
             </ContentEdit>
             <ContentView>
