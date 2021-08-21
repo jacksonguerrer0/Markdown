@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MarkDown from './container/MarkDown';
 
 ReactDOM.render(
-    <h2>MarkDown</h2>,
+    <MarkDown />,
   document.getElementById('root')
 );
