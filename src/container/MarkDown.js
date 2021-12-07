@@ -32,8 +32,6 @@ const MarkDown = () => {
                 <h3>Editor</h3>
                 <textarea 
                 name="edit"
-                cols="30" 
-                rows="10"
                 onChange={handleTextEdit}
                 value={textEdit}>
                 </textarea>

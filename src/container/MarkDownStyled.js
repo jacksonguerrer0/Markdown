@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     display: grid;
-    width: 70%;
+    width: 95%;
+    max-width: 900px;
     margin: auto;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -26,7 +27,7 @@ export const ContentEdit = styled.div`
     background-color: #ffd03c;
     text-align: center;
     border-radius: 1rem;
-    width: 80%;
+    width: 90%;
     margin: auto;
     h3{
         background-color: azure;
@@ -61,10 +62,11 @@ export const ContentView = styled.div`
         background-color: #ffffe6;
         margin: auto;
         margin-top: 2rem;
+        margin-bottom: 1rem;
         width: 90%;
         min-height: 200px;
         resize: vertical;
-        padding: 1rem;
+        padding: 0.5rem;
     }
     img{
         max-width: 100%;
